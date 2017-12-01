@@ -1,20 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<router-outlet></router-outlet>
+<div class="container">
+    <input type="text" #firstname>
+    <button (click)="getFirstname(firstname)">GetFirstname</button>
+    <br><br><br><br>
+    <select id="inputID" [(ngModel)]="counter" class="form-control">
+        <option value=""> -- Select One --</option>
+        <option value="1">Vorname</option>
+        <option value="2">Nachname</option>
+        <option value="3">Email</option>
+        <option value="4">Message</option>
+    </select>
+    <br><br><br>
+    <div style="text-align:center" [ngSwitch]="counter">
+        <form action="" method="post" role="form" (submit)="submitUserdata()">
+            <legend>Userdaten</legend>
+
+            <div class="form-group" *ngSwitchCase="1">
+                <label for="">Vorname</label>
+                <input type="text" class="form-control" [(ngModel)]="userdata.firstname" name="firstname" id=""
+                       placeholder="Input...">
+            </div>
+            <div class="form-group" *ngSwitchCase="2">
+                <label for="">Nachname</label>
+                <input type="text" class="form-control" [(ngModel)]="userdata.lastname" name="lastname" id=""
+                       placeholder="Input...">
+            </div>
+            <div class="form-group" *ngSwitchCase="3">
+                <label for="">Email</label>
+                <input type="text" class="form-control" [(ngModel)]="userdata.email" name="email" id=""
+                       placeholder="Input...">
+            </div>
+
+            <div class="form-group" *ngSwitchCase="4">
+                <label for="">Message</label>
+                <textarea name="message" class="form-control" [(ngModel)]="userdata.message" id="" cols="30"
+                          rows="10"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <p>{{userdata.firstname}}</p>
+            <p>{{userdata.lastname}}</p>
+            <p>{{userdata.email}}</p>
+            <p>{{userdata.message}}</p>
+        </form>
+    </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+    <button (click)="bla.checkVar()">Klick</button>
+
+
+<app-bla [myVar]="myCounter" #bla [name]="'TEEEEST'"  (myEvent)="submitUserdata()"></app-bla>
 
