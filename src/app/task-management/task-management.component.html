@@ -1,4 +1,8 @@
 <div class="container">
+    <ul class="errors">
+        <li *ngIf="this.errors.taskTitle" class="error">{{this.errors.taskTitle[0]}}</li>
+        <li *ngIf="this.errors.taskDescription" class="error">{{this.errors.taskDescription[0]}}</li>
+    </ul>
     <form action="" method="post" role="form">
         <legend>Aufgabe hinzufügen</legend>
         <hr>
