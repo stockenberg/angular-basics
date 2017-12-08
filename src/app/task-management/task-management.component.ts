@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NgModel} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+import {Task} from "../task";
 
 @Component({
-  selector: 'app-task-management',
-  templateUrl: './task-management.component.html',
-  styleUrls: ['./task-management.component.css']
+    selector: 'app-task-management',
+    templateUrl: './task-management.component.html',
+    styleUrls: ['./task-management.component.css']
 })
 export class TaskManagementComponent implements OnInit {
 
-  constructor() { }
+    task: Task = new Task();
 
-  ngOnInit() {
-  }
+    constructor(private http: HttpClient) {
+
+    }
+
+    ngOnInit() {
+
+    }
+
+    submitTask() {
+
+        console.log(this.task.taskTitle);
+        console.log(this.task.taskDescription);
+
+        this.task.taskTitle = null;
+        this.task.taskDescription = null;
+    }
+
 
 }

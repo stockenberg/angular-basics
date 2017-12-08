@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Task} from "../task";
 
 @Component({
   selector: 'app-task-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskListComponent implements OnInit {
 
-  constructor() { }
+  tasks: Array<Task>;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    // this.http.get()
   }
 
 }

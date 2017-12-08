@@ -4,16 +4,16 @@
         <hr>
         <div class="form-group">
             <label for="">Titel der Aufgabe</label>
-            <input type="text" class="form-control" name="" id="" >
+            <input type="text" class="form-control" name="taskTitle" [(ngModel)]="task.taskTitle" id="" >
         </div>
 
         <div class="form-group">
             <label for="">Beschreibung</label>
-            <textarea class="form-control" name="" id="" rows="3"></textarea>
+            <textarea class="form-control" name="taskMessage" [(ngModel)]="task.taskDescription" id="" rows="3"></textarea>
         </div>
 
         
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" (click)="submitTask()" >Submit</button>
     </form>
 </div>
