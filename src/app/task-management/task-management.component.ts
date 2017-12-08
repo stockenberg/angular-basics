@@ -25,8 +25,7 @@ export class TaskManagementComponent implements OnInit {
         console.log(this.task.taskTitle);
         console.log(this.task.taskDescription);
 
-        this.task.taskTitle = null;
-        this.task.taskDescription = null;
+        this.task = new Task;
     }
 
 

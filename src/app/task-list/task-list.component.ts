@@ -14,7 +14,9 @@ export class TaskListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // this.http.get()
+    this.http.get('http://localhost:8000/tasks').subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
