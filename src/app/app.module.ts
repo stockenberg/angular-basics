@@ -5,14 +5,14 @@ import {CommonModule} from "@angular/common";
 
 
 import {AppComponent} from './app.component';
-import { BlaComponent } from './bla/bla.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { TaskListComponent } from './task-list/task-list.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        BlaComponent
+        TaskListComponent
     ],
     imports: [
         BrowserModule, FormsModule, CommonModule, AppRoutingModule
