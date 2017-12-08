@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="nav nav-inline">
-    <a routerLink="/" class="nav-link active">Aufgabenliste</a>
-    <a routerLink="/manage" class="nav-link">Aufgaben verwalten</a>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Aufgabenliste</a>
+    <a routerLink="manage" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Aufgaben verwalten</a>
 </nav>
 
 <router-outlet></router-outlet>
