@@ -7,12 +7,14 @@ import {CommonModule} from "@angular/common";
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { TaskListComponent } from './task-list/task-list.component';
+import { TaskManagementComponent } from './task-management/task-management.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        TaskListComponent
+        TaskListComponent,
+        TaskManagementComponent
     ],
     imports: [
         BrowserModule, FormsModule, CommonModule, AppRoutingModule
